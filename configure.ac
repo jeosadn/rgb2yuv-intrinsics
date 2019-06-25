@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([rgb2yuvc-intrinsics], [1.0], [g6@tec.com])
+AC_INIT([rgb2yuv-intrinsics], [1.0], [g6@tec.com])
 AC_CONFIG_SRCDIR([src/rgb2yuv-intrinsics.cpp])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE
