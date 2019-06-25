@@ -3,3 +3,7 @@ rgb2yuv-intrinsics
 autom4te.cache/
 *.log
 *.status
+Makefile
+doc/Makefile
+src/.deps/
+src/Makefile
