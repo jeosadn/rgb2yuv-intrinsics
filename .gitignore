@@ -1,2 +1,5 @@
 *.o
 rgb2yuv-intrinsics
+autom4te.cache/
+*.log
+*.status
