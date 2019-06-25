@@ -16,6 +16,8 @@ int menu(int argc, char **argv, char **RGB, char **YUV, int *exit){
     //char *YUV = NULL;
     int authors = 0;
     int help = 0;
+    *RGB = NULL;
+    *YUV = NULL;
 
     int opt;
 
