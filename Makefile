@@ -9,7 +9,7 @@ TARGET = rgb2yuv-intrinsics
 all: $(TARGET)
 
 %: %.c
-	arm-linux-gnueabihf-g++ $(CFLAGS) $(LDFLAGS) -o $@ $<
+	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $<
 
 clean:
 	$(RM) $(TARGET)
