@@ -1,7 +1,7 @@
 PREFIX ?= /usr
 BINDIR ?= bin
 INSTALL ?= install
-CFLAGS += 
+CFLAGS += -mfpu=neon
 LDLAGS += 
 
 TARGET = rgb2yuv-intrinsics
@@ -9,7 +9,7 @@ TARGET = rgb2yuv-intrinsics
 all: $(TARGET)
 
 %: %.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
+	arm-linux-gnueabihf-g++ $(CFLAGS) $(LDFLAGS) -o $@ $<
 
 clean:
 	$(RM) $(TARGET)
