@@ -1,3 +1,3 @@
-To execute the example imagen convertion, use the following line:
+To execute the example imagen conversion, use the following line:
 
 	./rgb2yuv-intrinsics -i sample_640x480.rgb -o sample_640x480.yuv
