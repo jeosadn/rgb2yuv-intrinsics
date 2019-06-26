@@ -12,8 +12,6 @@
 using namespace std;
 
 int menu(int argc, char **argv, char **RGB, char **YUV, int *exit){
-    //char *RGB = NULL;
-    //char *YUV = NULL;
     int authors = 0;
     int help = 0;
     *RGB = NULL;
@@ -123,9 +121,9 @@ void rgb2yuv (char *input_image, char *output_image){
         float32x4_t constB4 = {128,128,128,128};
 
         for (int j=0; j<4; j++) {
-            tmp_r[j] = float(static_cast<unsigned char>(pixels_rgb[i+(j*3)]))/255;
-            tmp_g[j] = float(static_cast<unsigned char>(pixels_rgb[i+(j*3)+1]))/255;
-            tmp_b[j] = float(static_cast<unsigned char>(pixels_rgb[i+(j*3)+2]))/255;
+            tmp_r[j] = float(static_cast<unsigned char>(pixels_rgb[i+(j*3)]));
+            tmp_g[j] = float(static_cast<unsigned char>(pixels_rgb[i+(j*3)+1]));
+            tmp_b[j] = float(static_cast<unsigned char>(pixels_rgb[i+(j*3)+2]));
         }
 
         buf_r = vld1q_f32(tmp_r);
@@ -161,9 +159,9 @@ void rgb2yuv (char *input_image, char *output_image){
         vst1q_f32(tmp_v,buf_v);
 
         for (int j=0; j<4; j++) {
-            pixels_yuv[i+(j*3)] = char(tmp_y[j]*255);
-            pixels_yuv[i+(j*3)+1] = char(tmp_u[j]*255);
-            pixels_yuv[i+(j*3)+2] = char(tmp_v[j]*255);
+            pixels_yuv[i+(j*3)] = char(tmp_y[j]);
+            pixels_yuv[i+(j*3)+1] = char(tmp_u[j]);
+            pixels_yuv[i+(j*3)+2] = char(tmp_v[j]);
         }
     }
 
