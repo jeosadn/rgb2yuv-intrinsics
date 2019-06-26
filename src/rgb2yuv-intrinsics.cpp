@@ -151,8 +151,8 @@ void rgb2yuv (char *input_image, char *output_image){
         B3 = vmulq_f32(buf_b,constB3);
 
         buf_v = vaddq_f32(B1,B2);
-        buf_v = vaddq_f32(buf_y,B3);
-        buf_v = vaddq_f32(buf_y,constB4);
+        buf_v = vaddq_f32(buf_v,B3);
+        buf_v = vaddq_f32(buf_v,constB4);
 
         vst1q_f32(tmp_y,buf_y);
         vst1q_f32(tmp_u,buf_u);
