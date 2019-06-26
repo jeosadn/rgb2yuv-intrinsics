@@ -46,7 +46,8 @@ int menu(int argc, char **argv, char **RGB, char **YUV, int *exit){
     printf("    | |__) | |  __| |_) |  | |_ ___    \\ \\_/ /| |  | |\\ \\  / /  \n ");
     printf("    |  _  /| | |_ |  _ <   | __/ _ \\    \\   / | |  | | \\ \\/ /   \n ");
     printf("    | | \\ \\| |__| | |_) |  | || (_) |    | |  | |__| |  \\  /    \n ");
-    printf("    |_|  \\_\\\\_____|____/    \\__\\___/     |_|   \\____/    \\/     \n\n\n" );
+    printf("    |_|  \\_\\\\_____|____/    \\__\\___/     |_|   \\____/    \\/     \n");
+    printf("                                                                        v1.0\n\n\n" );
 
     if (authors) {
         printf("Authors: Boris Altamirano - Daniel Jimenez - Jose Andres Pacheco\n\n");
@@ -143,8 +144,8 @@ void rgb2yuv (char *input_image, char *output_image){
         G3 = vmulq_f32(buf_b,constG3);
 
         buf_u = vaddq_f32(G1,G2);
-        buf_u = vaddq_f32(buf_y,G3);
-        buf_u = vaddq_f32(buf_y,constG4);
+        buf_u = vaddq_f32(buf_u,G3);
+        buf_u = vaddq_f32(buf_u,constG4);
 
         B1 = vmulq_f32(buf_r,constB1);
         B2 = vmulq_f32(buf_g,constB2);
@@ -168,8 +169,6 @@ void rgb2yuv (char *input_image, char *output_image){
     in_image.close();
     out_image.write(pixels_yuv, sizeof(pixels_yuv));
     out_image.close();
-
-    printf("VAMOOOOOOOOOOOOOOOS!\n");
 }
 
 int main (int argc, char **argv) {
