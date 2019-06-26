@@ -168,6 +168,8 @@ void rgb2yuv (char *input_image, char *output_image){
     in_image.close();
     out_image.write(pixels_yuv, sizeof(pixels_yuv));
     out_image.close();
+
+    printf("VAMOOOOOOOOOOOOOOOS!\n");
 }
 
 int main (int argc, char **argv) {
